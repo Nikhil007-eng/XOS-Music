@@ -2,13 +2,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/XOS-Music/', // This fixes the 404/Blank screen on GitHub Pages
+  // Replace XOS-Music with your EXACT repo name if it's different
+  base: '/XOS-Music/', 
   resolve: {
     alias: {
-      // This allows the "import ... from '@/data/music'" syntax to work
       "@": path.resolve(__dirname, "./src"),
     },
   },
