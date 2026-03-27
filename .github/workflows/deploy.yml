@@ -1,7 +1,7 @@
 name: Deploy XOS Music
 on:
   push:
-    branches: ["main"] # Make sure your branch is named 'main'
+    branches: ["main"]
 permissions:
   contents: read
   pages: write
@@ -12,22 +12,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # Removed the cache line to fix the error
+
       - name: Install and Build
         run: |
           npm install
           npm run build
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # This sends the "Built" version to the link
+          path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
