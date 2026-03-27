@@ -17,10 +17,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # Removed the cache line to fix the error
 
       - name: Install and Build
         run: |
+          # This command creates the missing lock file automatically
+          npm install --package-lock-only 
           npm install
           npm run build
 
