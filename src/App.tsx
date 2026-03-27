@@ -1,4 +1,4 @@
-Import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Track, apiTrackToTrack, FALLBACK_TRACKS, shuffleArray, RepeatMode } from "@/data/music";
 import Home from "@/pages/Home";
 import BottomPlayer from "@/components/BottomPlayer";
